@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\icon.ico" />
+    <None Remove="Resources\logo.png" />
+    <None Remove="Resources\picture.png" />
+    <None Remove="Resources\ProductImage\A346R4.jpg" />
+    <None Remove="Resources\ProductImage\A543T6.jpg" />
+    <None Remove="Resources\ProductImage\B730E2.jpg" />
+    <None Remove="Resources\ProductImage\D419T7.png" />
+    <None Remove="Resources\ProductImage\F719R5.jpg" />
+    <None Remove="Resources\ProductImage\G278R6.png" />
+    <None Remove="Resources\ProductImage\H452A3.png" />
+    <None Remove="Resources\ProductImage\output.png" />
+    <None Remove="Resources\ProductImage\R259E6.jpg" />
+    <None Remove="Resources\ProductImage\T564P5.jpg" />
+    <None Remove="Resources\ProductImage\А112Т4.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\icon.ico" />
+    <Resource Include="Resources\logo.png" />
+    <Resource Include="Resources\ProductImage\picture.png" />
+    <Resource Include="Resources\ProductImage\D419T7.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\ProductImage\B730E2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpressMvvm" Version="23.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\ProductImage\A346R4.jpg" />
+    <Resource Include="Resources\ProductImage\A543T6.jpg" />
+    <Resource Include="Resources\ProductImage\F719R5.jpg" />
+    <Resource Include="Resources\ProductImage\G278R6.png" />
+    <Resource Include="Resources\ProductImage\H452A3.png" />
+    <Resource Include="Resources\ProductImage\R259E6.jpg" />
+    <Resource Include="Resources\ProductImage\T564P5.jpg" />
+    <Resource Include="Resources\ProductImage\А112Т4.jpg" />
+  </ItemGroup>
+
+</Project>

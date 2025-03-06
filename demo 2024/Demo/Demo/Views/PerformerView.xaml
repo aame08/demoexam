@@ -1,0 +1,87 @@
+﻿<Window x:Class="Demo.Views.PerformerView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo.Views"
+        mc:Ignorable="d"
+        Title="Техносервис" Height="480" Width="800" Icon="C:\Users\Я\source\repos\Demo\Demo\Resources\logo.png" WindowStartupLocation="CenterScreen" MinHeight="480" MinWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="22"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="60"></ColumnDefinition>
+            <ColumnDefinition Width="53*"></ColumnDefinition>
+            <ColumnDefinition Width="160"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="160"></ColumnDefinition>
+            <ColumnDefinition Width="53*"></ColumnDefinition>
+            <ColumnDefinition Width="60"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="9" Fill="#FF76CBE3"/>
+        <Button x:Name="bExit" Content="Закрыть" Style="{StaticResource Button}" Grid.Row="0" Grid.Column="1" Height="20" Command="{Binding OpenMainWindowWnd}"/>
+        <WrapPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="6" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Source="C:\Users\Я\source\repos\Demo\Demo\Resources\logo.png"/>
+            <TextBlock Style="{StaticResource MainText}"/>
+        </WrapPanel>
+        <TextBlock Text="Просмотр заявок." Style="{StaticResource Text}" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <Button x:Name="createReport" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" Style="{StaticResource Button}" Margin="5" Content="Создать отчет" Command="{Binding CreateReportWnd}"/>
+        <DataGrid x:Name="dgApplication" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="7" AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow" IsReadOnly="True" Background="White" RowBackground="White" ItemsSource="{Binding ApplicationsPerformer}" SelectedItem="{Binding SelectedApplication}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№ заявки" Binding="{Binding IdApplication}" Width="1*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#FF76CBE3"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Дата добавления" Binding="{Binding DateAddition}" Width="2*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#FF76CBE3"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Описание проблемы" Binding="{Binding DescriptionProblem}" Width="2*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#FF76CBE3"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Статус" Binding="{Binding StatusApplication}" Width="1*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#FF76CBE3"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Приоритет" Binding="{Binding Priority}" Width="1*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#FF76CBE3"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="bEditData" Command="{Binding DataContext.OpenExecuteApplicationWnd, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" CommandParameter="{Binding SelectedApplication}" Content="Заказать деталь"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Rectangle Grid.Row="5" Grid.ColumnSpan="9" Fill="#FF76CBE3"/>
+        <TextBlock x:Name="tUser" Style="{StaticResource Text}" TextWrapping="Wrap" FontSize="12" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="tID" FontSize="1" Grid.Row="6" Grid.Column="9"/>
+    </Grid>
+</Window>

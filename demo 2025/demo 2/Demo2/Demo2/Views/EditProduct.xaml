@@ -1,0 +1,77 @@
+﻿<Window x:Class="Demo2.Views.EditProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo2.Views"
+        mc:Ignorable="d"
+        Title="Пиши-стирай. Редактирование товара" Height="600" Width="900" Icon="C:\Users\Я\source\repos\Demo2\Demo2\Resources\icon.ico" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#FF76E383" Grid.Row="0" />
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center">
+            <Image Source="C:\Users\Я\source\repos\Demo2\Demo2\Resources\logo.png"/>
+            <TextBlock Text="Редактирование товара" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
+        </StackPanel>
+        <Button x:Name="bBack" Content="Назад" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Click="bBack_Click"/>
+        <Grid Margin="10" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Артикул товара: " Width="200"/>
+                    <TextBox x:Name="tbArticle" Width="250" IsReadOnly="True" Text="{Binding ArticleNumberProduct}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Content="Название товара: " Width="200"/>
+                    <TextBox x:Name="tbName" Width="250" Text="{Binding NameProduct}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Content="Стоимость товара: " Width="200"/>
+                    <TextBox x:Name="tbCost" Width="250" Text="{Binding CostProduct}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Content="Скидка: " Width="200"/>
+                    <TextBox x:Name="tbDiscount" Width="250" Text="{Binding DiscountAmountProduct}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Content="Максимальная скидка: " Width="200"/>
+                    <TextBox x:Name="tbMaxDiscount" Width="250" Text="{Binding MaxDiscountProduct}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Content="Количество: " Width="200"/>
+                    <TextBox x:Name="tbQuantity" Width="250" Text="{Binding QuantityInStockProduct}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Content="Описание: " Width="200"/>
+                    <TextBox x:Name="tbDescription" Width="250" Text="{Binding DescriptionProduct}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Content="Единицы измерения: " Width="200"/>
+                    <ComboBox x:Name="cbUnit" Width="250"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Content="Производитель: " Width="200"/>
+                    <ComboBox x:Name="cbManufacters" Width="250"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Content="Поставщик: " Width="200"/>
+                    <ComboBox x:Name="cbSuppliers" Width="250"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Content="Тип продукта: " Width="200"/>
+                    <ComboBox x:Name="cbTypes" Width="250"/>
+                </StackPanel>
+            </StackPanel>
+            <Button x:Name="bEdit" Content="Изменить" Margin="0,0,10,0" Click="bEdit_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"/>
+        </Grid>
+    </Grid>
+</Window>

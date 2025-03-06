@@ -1,0 +1,54 @@
+﻿<Window x:Class="Demka.Views.Ticket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demka.Views"
+        mc:Ignorable="d"
+        Title="Пиши-стирай" Height="450" Width="400" Icon="C:\Users\Я\source\repos\Demka\Demka\Resources\icon.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="1" Grid.ColumnSpan="2" Margin="5" Grid.RowSpan="2" Stroke="#498C51" StrokeThickness="1" Fill="Transparent" RadiusX="5" RadiusY="5"/>
+        <Rectangle Grid.ColumnSpan="2" Fill="#FF76E383"/>
+        <WrapPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2">
+            <WrapPanel Orientation="Horizontal">
+                <Image Source="/Resources/logo.png" Height="40" Width="40"/>
+                <TextBlock Text="Пиши-стирай" Style="{StaticResource MainText}" FontSize="20" Margin="5"/>
+            </WrapPanel>
+            <TextBlock Text="Ваш заказ оформлен." Style="{StaticResource Text}"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Номер заказа:" Style="{StaticResource TBl_for_crud}" Margin="8" Width="150"/>
+            <TextBlock Text="Дата заказа:" Style="{StaticResource TBl_for_crud}" Margin="8" Width="150"/>
+            <TextBlock Text="Количество товаров:" Style="{StaticResource TBl_for_crud}" Margin="8" Width="150"/>
+            <TextBlock Text="Сумма заказа:" Style="{StaticResource TBl_for_crud}" Margin="8" Width="150"/>
+            <TextBlock Text="Сумма скидки:" Style="{StaticResource TBl_for_crud}" Margin="8" Width="150"/>
+            <TextBlock Text="Пункт выдачи:" Style="{StaticResource TBl_for_crud}" Margin="8" Width="150"/>
+            <TextBlock Text="Дата заказа:" Style="{StaticResource TBl_for_crud}" Margin="8" Width="150"/>
+            <TextBlock Text="Код получения:" Style="{StaticResource TBl_for_crud}" Margin="8" Width="150"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="11" Style="{StaticResource TBl_for_crud}" Margin="8" Width="200"/>
+            <TextBlock Text="31.03.2024" Style="{StaticResource TBl_for_crud}" Margin="8" Width="200"/>
+            <TextBlock Text="6" Style="{StaticResource TBl_for_crud}" Margin="8" Width="200"/>
+            <TextBlock Text="12345" Style="{StaticResource TBl_for_crud}" Margin="8" Width="200"/>
+            <TextBlock Text="898" Style="{StaticResource TBl_for_crud}" Margin="8" Width="200"/>
+            <TextBlock Text="г. Тихорецк, ул. Новая, 19" Style="{StaticResource TBl_for_crud}" Margin="8" Width="200"/>
+            <TextBlock Text="02.04.2024" Style="{StaticResource TBl_for_crud}" Margin="8" Width="200"/>
+            <TextBlock Text="321" Style="{StaticResource TBl_for_crud}" Margin="8" Width="200"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <Button x:Name="bOK" Style="{StaticResource Button}" Content="Хорошо." Command="{Binding OpenViewProductWnd}"/>
+        </WrapPanel>
+    </Grid>
+</Window>

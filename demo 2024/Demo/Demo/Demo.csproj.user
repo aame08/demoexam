@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\AddApplication.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CreateReport.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DispatcherWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EditApplication.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ExecuteApplication.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PerformerView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddApplication.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CreateReport.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DispatcherWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EditApplication.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ExecuteApplication.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PerformerView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

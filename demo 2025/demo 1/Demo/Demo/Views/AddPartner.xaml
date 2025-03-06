@@ -1,0 +1,64 @@
+﻿<Page x:Class="Demo.Views.AddPartner"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Demo.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddPartner">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#F4E8D3" Grid.Row="0" Grid.ColumnSpan="3"/>
+        <Button x:Name="bBack" Style="{StaticResource Button}" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Click="bBack_Click" Width="50"/>
+        <TextBlock Text="Добавление нового партнера" Grid.Column="1" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="3" Margin="5" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Vertical" Margin="5">
+                <TextBlock Text="Тип партнера:"/>
+                <ComboBox x:Name="cbType" Width="200" HorizontalAlignment="Left" BorderBrush="{x:Null}" Background="White">
+                    <ComboBoxItem Content="ЗАО"/>
+                    <ComboBoxItem Content="ООО"/>
+                    <ComboBoxItem Content="ПАО"/>
+                </ComboBox>
+                <TextBlock Text="Наименование:"/>
+                <TextBox x:Name="tbName" GotFocus="TextBoxEmpty" ToolTip="Наименование партнера" Width="200" HorizontalAlignment="Left"/>
+                <TextBlock Text="ФИО директора:"/>
+                <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="tbSurnameDirector" Width="100" Style="{StaticResource TB_for_crud}" GotFocus="TextBoxEmpty" ToolTip="Фамилия директора"/>
+                    <TextBox x:Name="tbNameDirector" Margin="5, 0, 0, 0" Width="100" Style="{StaticResource TB_for_crud}" GotFocus="TextBoxEmpty" ToolTip="Имя директора"/>
+                    <TextBox x:Name="tbPatronymicDirector" Margin="5, 0, 0, 0" Width="100" Style="{StaticResource TB_for_crud}" GotFocus="TextBoxEmpty" ToolTip="Отчество директора"/>
+                </StackPanel>
+                <TextBlock Text="Эл. почта партнера:"/>
+                <TextBox x:Name="tbEmail" Style="{StaticResource TB_for_crud}" GotFocus="TextBoxEmpty" Text="username@example.com" ToolTip="Эл. почта партнера. Формат: username@example.com" Width="200" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="5">
+                <TextBlock Text="Телефон партнера:"/>
+                <TextBox x:Name="tbPhone" Style="{StaticResource TB_for_crud}" GotFocus="TextBoxEmpty" Text="XXX XXX XX XX" ToolTip="Номер телефона. Формат: XXX XXX XX XX" Width="200" HorizontalAlignment="Left"/>
+                <TextBlock Text="Адрес:" Grid.Column="1" VerticalAlignment="Center" Height="16"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="tbIndexAddress" Width="50" Style="{StaticResource TB_for_crud}" GotFocus="TextBoxEmpty" Text="Индекс" ToolTip="Индекс. Формат: XXXXXX"/>
+                    <TextBox x:Name="tbLocalityAddress" Margin="5, 0, 0, 0" Width="100" Style="{StaticResource TB_for_crud}" GotFocus="TextBoxEmpty" Text="Область" ToolTip="Область"/>
+                    <TextBox x:Name="tbCityAddress" Margin="5, 0, 0, 0" Width="100" Style="{StaticResource TB_for_crud}" GotFocus="TextBoxEmpty" Text="Город" ToolTip="Город"/>
+                    <TextBox x:Name="tbStreetAddress" Margin="5, 0, 0, 0" Width="100" Style="{StaticResource TB_for_crud}" GotFocus="TextBoxEmpty" Text="Улица" ToolTip="Улица"/>
+                    <TextBox x:Name="tbHomeAddress" Margin="5, 0, 0, 0" Width="50" Style="{StaticResource TB_for_crud}" GotFocus="TextBoxEmpty" Text="Дом" ToolTip="Дом"/>
+                </StackPanel>
+                <TextBlock Text="ИНН партнера:"/>
+                <TextBox x:Name="tbInn" Style="{StaticResource TB_for_crud}" GotFocus="TextBoxEmpty" Text="XXXXXXXXXX" ToolTip="ИНН партнера. Формат: XXXXXXXXXX" Width="200" HorizontalAlignment="Left"/>
+                <TextBlock Text="Рейтинг партнера:"/>
+                <TextBox x:Name="tbRating" Style="{StaticResource TB_for_crud}" GotFocus="TextBoxEmpty" Text="от 0 до 10" ToolTip="Рейтинг партнера" Width="200" HorizontalAlignment="Left"/>
+            </StackPanel>
+            
+        </StackPanel>
+        <Button x:Name="bAdd" Content="Добавить партнера" Style="{StaticResource Button}" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="bAdd_Click" Width="150"/>
+    </Grid>
+</Page>

@@ -1,0 +1,87 @@
+﻿<Window x:Class="Demka.Views.Manager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demka.Views" xmlns:viewsmodels="clr-namespace:Demka.ViewsModels" d:DataContext="{d:DesignInstance Type=viewsmodels:BrowseProduct}"
+        mc:Ignorable="d"
+        Title="Пиши-стирай" Height="480" Width="800" Icon="C:\Users\Я\source\repos\Demka\Demka\Resources\icon.ico" WindowStartupLocation="CenterScreen" MinHeight="480" MinWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="22"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="60"></ColumnDefinition>
+            <ColumnDefinition Width="53*"></ColumnDefinition>
+            <ColumnDefinition Width="160"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="160"></ColumnDefinition>
+            <ColumnDefinition Width="53*"></ColumnDefinition>
+            <ColumnDefinition Width="60"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="9" Fill="#FF76E383"/>
+        <Button x:Name="bExit" Content="Выйти" Style="{StaticResource Button}" Grid.Row="0" Grid.Column="1" Height="20" Command="{Binding OpenMainWindowWnd}"/>
+        <Image Source="/Resources/logo.png" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <WrapPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="6" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Source="C:\Users\Я\source\repos\Demo\Demo\Images\logo.png"/>
+            <TextBlock Text="ПИШИ-СТИРАЙ" Style="{StaticResource MainText}"/>
+        </WrapPanel>
+        <TextBlock Text="Управление заказами." Style="{StaticResource Text}" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <DataGrid x:Name="dgOrders" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="7" AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow" IsReadOnly="True" Background="White" RowBackground="White">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding OrderId}" Width="1*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#FF76E383"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Дата заказа" Binding="{Binding OrderDate}" Width="1*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#FF76E383"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Дата доставки" Binding="{Binding OrderDeliveryDate}" Width="1*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#FF76E383"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Клиент" Binding="{Binding OrderClient}" Width="1*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#FF76E383"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Статус заказа" Binding="{Binding OrderStatus}" Width="1*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#FF76E383"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="bEditData" Click="bEditData_Click">Изменить</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="bViewProduct" Content="Просмотр товаров" Style="{StaticResource Button}" Height="30" Width="125" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" Command="{Binding OpenViewProductWnd}"/>
+        <Rectangle Grid.Row="6" Grid.ColumnSpan="9" Fill="#FF76E383"/>
+        <TextBlock x:Name="tUser" Style="{StaticResource Text}" TextWrapping="Wrap" FontSize="12" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2"/>
+    </Grid>
+</Window>

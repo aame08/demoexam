@@ -1,0 +1,41 @@
+﻿<Window x:Class="Demo2.Views.ManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo2.Views"
+        mc:Ignorable="d"
+        Title="Пиши-стирай. Окно менеджера" Height="450" Width="800" Icon="C:\Users\Я\source\repos\Demo2\Demo2\Resources\icon.ico" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#FF76E383" Grid.Row="0" Grid.RowSpan="2"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center">
+            <Image Source="C:\Users\Я\source\repos\Demo2\Demo2\Resources\logo.png"/>
+            <TextBlock Text="OOO Пиши-стирай" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
+        </StackPanel>
+        <Button x:Name="bBack" Content="Назад" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,10,0,0" Click="bBack_Click"/>
+        <TextBlock x:Name="tbNameUser" Grid.Row="1" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,5,0"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Bottom">
+            <TextBlock Text="Фильтрация: " Margin="15,0,0,0"/>
+            <ComboBox x:Name="cbFilter" Width="160" SelectionChanged="cbFilter_SelectionChanged"/>
+            <TextBlock Text="Сортировка: " Margin="15,0,0,0"/>
+            <ComboBox x:Name="cbSort" Width="160" SelectionChanged="cbSort_SelectionChanged"/>
+        </StackPanel>
+        <DataGrid x:Name="dgOrders" Grid.Row="2" AutoGenerateColumns="False" SelectionMode="Single" Loaded="dgOrders_Loaded">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding OrderId}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Дата заказа" Binding="{Binding OrderDate, StringFormat={}{0:dd/MM/yyyy}}"/>
+                <DataGridTextColumn Header="Дата доставки" Binding="{Binding OrderDeliveryDate, StringFormat={}{0:dd/MM/yyyy}}"/>
+                <DataGridTextColumn Header="ФИО клиента" Binding="{Binding FIO}"/>
+                <DataGridTextColumn Header="Общая сумма заказа" Binding="{Binding TotalAmount, StringFormat={}{0:C}}"/>
+                <DataGridTextColumn Header="Общая скидка заказа" Binding="{Binding TotalDiscount, StringFormat={}{0:P}}"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding OrderStatus}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
