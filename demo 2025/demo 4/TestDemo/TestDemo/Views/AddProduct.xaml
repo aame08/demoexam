@@ -1,0 +1,67 @@
+﻿<Window x:Class="TestDemo.Views.AddProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestDemo.Views"
+        mc:Ignorable="d"
+        Title="ООО Цветы. Добавление товара" Height="600" Width="800" Icon="C:\Users\Я\source\repos\TestDemo\TestDemo\Resources\icon.ico" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Fill="#FF76E383" Grid.Row="0"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Source="C:\Users\Я\source\repos\TestDemo\TestDemo\Resources\logo.png" Height="80" Width="80"/>
+            <TextBlock Text="ООО Цветы. Добавление товара" FontWeight="Bold" VerticalAlignment="Center" FontSize="30" Margin="15,0,0,0"/>
+        </StackPanel>
+        <Button x:Name="bBack" Content="Назад" Click="bBack_Click" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Артикул товара:" Width="200"/>
+                <TextBox x:Name="tbArticle" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Название товара:" Width="200"/>
+                <TextBox x:Name="tbName" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Цена товара:" Width="200"/>
+                <TextBox x:Name="tbCost" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Описание товара:" Width="200"/>
+                <TextBox x:Name="tbDesc" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Текущая скидка:" Width="200"/>
+                <TextBox x:Name="tbNowDiscount" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Максимальная скидка:" Width="200"/>
+                <TextBox x:Name="tbMaxDiscount" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Количество товара:" Width="200"/>
+                <TextBox x:Name="tbQuantity" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Производитель товара:" Width="200"/>
+                <ComboBox x:Name="cbManufacters" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Поставщик товара:" Width="200"/>
+                <ComboBox x:Name="cbSuppliers" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Категория товара:" Width="200"/>
+                <ComboBox x:Name="cbCategories" Width="200"/>
+            </StackPanel>
+            <Button x:Name="bAdd" Content="Добавить" HorizontalAlignment="Center" VerticalAlignment="Center" Click="bAdd_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
